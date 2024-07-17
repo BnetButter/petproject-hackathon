@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  petproject:
+    build:
+      context: ./petproject
+      dockerfile: Dockerfile
+    container_name: petproject
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./petproject:/usr/src/app
+    working_dir: /usr/src/app
+    stdin_open: true
+    tty: true
+    command: [ "yarn", "start" ]
+  
