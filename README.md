@@ -8,7 +8,7 @@ docker compose build
 docker compose up -d
 
 
-Navigate to http://localhost:3000 to navigate to the development server
+Navigate to http://localhost to navigate to the development server
 
 
 Here's a breakdown of the directories:
