@@ -14,4 +14,23 @@ services:
     stdin_open: true
     tty: true
     command: [ "yarn", "start" ]
+    networks:
+      - pet_network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    networks:
+      - pet_network
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - petproject
   
+  
+
+networks:
+  pet_network:
+    driver: bridge
