@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # Copy the rest of your application code to the container
 COPY package.json yarn.lock ./
 
+RUN npm install react-scripts -g
 RUN yarn install
 
 

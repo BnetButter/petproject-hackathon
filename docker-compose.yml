@@ -11,7 +11,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./petproject:/usr/src/app
+      - ./petproject/src:/usr/src/app/src
+      - ./petproject/public:/usr/src/app/public
     working_dir: /usr/src/app
     stdin_open: true
     tty: true
