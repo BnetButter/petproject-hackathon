@@ -6,6 +6,8 @@ services:
       context: ./petproject
       dockerfile: Dockerfile
     container_name: petproject
+    env_file:
+      - .env
     ports:
       - "3000:3000"
     volumes:
@@ -20,6 +22,8 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx_proxy
+    env_file:
+      - .env
     ports:
       - "80:80"
     networks:
@@ -29,7 +33,15 @@ services:
     depends_on:
       - petproject
   
-  
+  postgis:
+    image: postgis/postgis:latest
+    container_name: postgis_db
+    env_file:
+      - .env
+    networks:
+      - pet_network
+
+
 
 networks:
   pet_network:
