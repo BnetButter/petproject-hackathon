@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 
-
+import sys
 import zlib
 import time
 import json
@@ -14,6 +14,8 @@ from urllib.parse import parse_qs, urlencode
 import random
 
 from queue import Queue, Empty
+
+OUTPUT_FILE = sys.argv[1]
 
 # Setup Chrome options
 chrome_options = Options()
@@ -85,7 +87,7 @@ with webdriver.Chrome(options=chrome_options) as driver:
             total_rows = df.shape[0]
             print(total_rows, n_unqiue)
 
-            df.to_csv("address_data.csv")
+            df.to_csv(OUTPUT_FILE)
 
             exit()
             

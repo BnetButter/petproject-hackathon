@@ -1,0 +1,18 @@
+id,geojson
+0,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.71880469999999, 37.3735528]}, 'properties': {'address': '1651 Hwy M, Niangua, MO 65713, USA'}}"
+1,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.59250130000001, 37.0261266]}, 'properties': {'address': '1011 Lambeth Rd, Billings, MO 65610, USA'}}"
+2,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.446806, 37.6036379]}, 'properties': {'address': '1030 E 444th Rd, Bolivar, MO 65613, USA'}}"
+3,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.71880469999999, 37.3735528]}, 'properties': {'address': '1651 Hwy M, Niangua, MO 65713, USA'}}"
+4,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-94.46052929999999, 40.3890252]}, 'properties': {'address': '29968 Juniper Ave, Worth, MO 64499, USA'}}"
+5,
+6,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.193347, 39.121289]}, 'properties': {'address': '14500 N Level Rd, Hallsville, MO 65255, USA'}}"
+7,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-94.42603, 36.6410732]}, 'properties': {'address': '137 Walters Ln, Anderson, MO 64831, USA'}}"
+8,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.446806, 37.6036379]}, 'properties': {'address': '1030 E 444th Rd, Bolivar, MO 65613, USA'}}"
+9,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.446806, 37.6036379]}, 'properties': {'address': '1030 E 444th Rd, Bolivar, MO 65613, USA'}}"
+10,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.446806, 37.6036379]}, 'properties': {'address': '1030 E 444th Rd, Bolivar, MO 65613, USA'}}"
+11,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.193347, 39.121289]}, 'properties': {'address': '14500 N Level Rd, Hallsville, MO 65255, USA'}}"
+12,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.446806, 37.6036379]}, 'properties': {'address': '1030 E 444th Rd, Bolivar, MO 65613, USA'}}"
+13,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.71880469999999, 37.3735528]}, 'properties': {'address': '1651 Hwy M, Niangua, MO 65713, USA'}}"
+14,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-93.446806, 37.6036379]}, 'properties': {'address': '1030 E 444th Rd, Bolivar, MO 65613, USA'}}"
+15,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.326268, 37.34182]}, 'properties': {'address': '7930 MO-95, Mountain Grove, MO 65711, USA'}}"
+16,"{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [-92.193347, 39.121289]}, 'properties': {'address': '14500 N Level Rd, Hallsville, MO 65255, USA'}}"

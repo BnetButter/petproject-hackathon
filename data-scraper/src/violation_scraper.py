@@ -14,6 +14,10 @@ import random
 
 from queue import Queue, Empty
 
+import sys
+
+OUTPUT_FILE=sys.argv[1]
+
 # Setup Chrome options
 chrome_options = Options()
 chrome_options.add_argument('--headless')  # Run in headless mode
@@ -96,7 +100,7 @@ with webdriver.Chrome(options=chrome_options) as driver:
         except Empty:
             df = dataframe_ptr[0]
            
-            df.to_csv("violations.csv")
+            df.to_csv(OUTPUT_FILE)
 
             exit()
             
