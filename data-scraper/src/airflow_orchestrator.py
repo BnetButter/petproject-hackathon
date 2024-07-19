@@ -55,11 +55,16 @@ download_violations = BashOperator(
 )
 
 # Define the tasks
-run_merge_files = PythonOperator(
+run_merge_files = BashOperator(
     task_id='merge_files',
-    python_callable=merge_files,
+    bash_command="python3 /app/src/merge_files.py /app/data/{{ ds }}/licenses.csv /app/data/{{ ds }}/violations.csv /app/data/{{ ds }}/merged_1.csv",
     dag=dag,
 )
 
+run_geocoder = BashOperator(
+    task_id='geocoder',
+    bash_command="python3 /app/src/geocoder.py /app/data/{{ ds }}/merged_1.csv /app/data/{{ ds }}/geocoded.csv",
+    dag=dag
+)
 
-create_directory >> [ download_licensee, download_violations ] >> run_merge_files
+create_directory >> [ download_licensee, download_violations ] >> run_merge_files >> [ run_geocoder ]
