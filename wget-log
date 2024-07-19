@@ -1,0 +1,11 @@
+--2024-07-19 08:28:41--  https://aphis.file.force.com/sfc/dist/version/download/?oid=00Dt0000000GyZH
+Resolving aphis.file.force.com (aphis.file.force.com)... 52.61.128.92, 52.61.129.106, 52.61.128.2
+Connecting to aphis.file.force.com (aphis.file.force.com)|52.61.128.92|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html?oid=00Dt0000000GyZH’
+
+index.html?oid=00Dt0000000GyZH                 [<=>                                                                                    ]       0  --.-KB/s               index.html?oid=00Dt0000000GyZH                 [ <=>                                                                                   ]     550  --.-KB/s    in 0s      
+
+2024-07-19 08:28:42 (49.0 MB/s) - ‘index.html?oid=00Dt0000000GyZH’ saved [550]
+
