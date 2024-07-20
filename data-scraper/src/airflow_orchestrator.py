@@ -29,9 +29,9 @@ default_args = {
 
 # Define the DAG
 dag = DAG(
-    'etl_workflow_with_dynamic_directory',
+    'Download_USDA_Inspection_Data',
     default_args=default_args,
-    description='An ETL workflow with dynamic directory creation',
+    description='An ETL Workflow that scrapes USDA inspection data for puppy mill violations and exports data as GeoJSON',
     schedule_interval=timedelta(days=1),
 )
 
@@ -67,4 +67,25 @@ run_geocoder = BashOperator(
     dag=dag
 )
 
-create_directory >> [ download_licensee, download_violations ] >> run_merge_files >> [ run_geocoder ]
+run_text_extractor = BashOperator(
+    task_id='text_extractor',
+    bash_command="python3 /app/src/report_scraper.py /app/data/{{ ds }} /app/data/{{ ds }}/merged_1.csv /app/data/{{ ds }}/extracted_pdf.csv",
+    dag=dag
+)
+
+run_summarizer = BashOperator(
+    task_id='summarizer',
+    bash_command='python3 /app/src/summarizer.py /app/data/{{ ds }}/extracted_pdf.csv /app/data/{{ ds }}/summarized.csv',
+    dag=dag
+)
+
+final_merge = BashOperator(
+    task_id='final_merge',
+    bash_command='python3 /app/src/export_geojson.py /app/data/{{ ds }}/merged_1.csv /app/data/{{ ds }}/geocoded.csv /app/data/{{ ds }}/summarized.csv /app/data/{{ ds }}/report.geojson',
+    dag=dag
+)
+
+create_directory >> [ download_licensee, download_violations ] >> run_merge_files >> [ run_geocoder, run_text_extractor]
+run_text_extractor >> run_summarizer
+[ run_geocoder, run_summarizer ] >> final_merge
+

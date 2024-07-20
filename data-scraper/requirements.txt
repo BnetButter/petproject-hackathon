@@ -3,4 +3,6 @@ blinker==1.7.0
 selenium-wire
 pandas
 apache-airflow
-
+pymupdf
+openai
+flask

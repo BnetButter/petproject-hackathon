@@ -1,0 +1,6 @@
+requests
+geojson
+psycopg2-binary
+geopandas
+sqlalchemy
+geoalchemy2

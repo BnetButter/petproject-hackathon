@@ -2,3 +2,5 @@ data/*
 
 # But not the directory itself
 !data/
+
+*.pdf

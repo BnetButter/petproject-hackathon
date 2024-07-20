@@ -1,6 +1,39 @@
 version: '3.8'
 
 services:
+
+  airflow:
+    build:
+      context: ./data-scraper
+      dockerfile: Dockerfile
+    container_name: airflow
+    env_file: .env
+    volumes:
+      - ./data-scraper:/app
+      - ./data-scraper/airflow.cfg:/home/seluser/airflow/airflow.cfg
+    stdin_open: true
+    tty: true
+    command: [ "/app/entrypoint.sh" ]
+
+    networks:
+      - pet_network
+
+  airflow-gateway:
+    build:
+      context: ./data-scraper
+      dockerfile: Dockerfile
+    container_name: airflow-gateway
+    env_file: .env
+    volumes:
+      - ./data-scraper:/app
+      - ./data-scraper/airflow.cfg:/home/seluser/airflow/airflow.cfg
+    stdin_open: true
+    tty: true
+    command: [ "python3", "/app/src/app.py" ]
+
+    networks:
+      - pet_network
+
   petproject:
     build:
       context: ./petproject
