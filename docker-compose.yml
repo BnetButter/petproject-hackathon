@@ -34,6 +34,18 @@ services:
     networks:
       - pet_network
 
+  geoserver-updator:
+    build:
+      context: ./geoserver-updator
+      dockerfile: Dockerfile
+    container_name: geoserver-updator
+    env_file: .env
+    volumes:
+      - ./geoserver-updator:/app
+    command: [ "python3", "/app/script.py" ]
+    networks:
+      - pet_network
+
   petproject:
     build:
       context: ./petproject
@@ -71,14 +83,20 @@ services:
   postgis:
     image: postgis/postgis:latest
     container_name: postgis_db
+    volumes:
+     - geo-db-data:/var/lib/postgresql/data
     env_file:
       - .env
     networks:
       - pet_network
+    
+
 
   geoserver:
     image: kartoza/geoserver:latest
     container_name: geoserver
+    volumes:
+      - geoserver-data:/opt/geoserver/data_dir
     ports:
       - "8080:8080"
     env_file:
@@ -91,7 +109,6 @@ services:
 volumes:
    geoserver-data:
    geo-db-data:
-
 
 networks:
   pet_network:

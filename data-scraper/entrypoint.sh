@@ -11,4 +11,4 @@ airflow users create \
 
 
 nohup airflow scheduler > ~/airflow/logs/scheduler.log 2>&1 &
-airflow webserver --port 8080 > ~/airflow/logs/webserver.log 2>&1
+airflow webserver --port 8080
